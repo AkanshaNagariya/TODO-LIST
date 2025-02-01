@@ -1,0 +1,174 @@
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Apply background color to the whole page */
+body {
+  background-color: #e0f7fa;  /* Light cyan background; change as needed */
+}
+
+/* Main Container centered vertically and horizontally */
+.main-div {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Container for the Todo App */
+.child-div {
+  background: #ffffff;
+  width: 90%;
+  max-width: 600px;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Figure: Logo & Caption */
+figure {
+  text-align: center;
+  margin-bottom: 20px;
+}
+figure img {
+  width: 80px;
+}
+figure figcaption {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Input Section */
+.addItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.addItems input {
+  width: 80%;
+  padding: 15px;
+  font-size: 1.2rem;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  outline: none;
+  transition: border-color 0.3s;
+  background: transparent;
+  color: #333;
+}
+.addItems input::placeholder {
+  color: #999;
+}
+.addItems input:focus {
+  border-bottom: 2px solid #9b59b6;
+}
+
+/* Plus Icon */
+.addItems i {
+  font-size: 2rem;
+  color: #9b59b6;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: transform 0.3s, color 0.3s;
+}
+.addItems i:hover {
+  transform: scale(1.2);
+  color:red;
+}
+
+/* List of Todo Items */
+.showItems {
+  margin-top: 30px;
+}
+
+/* Each Todo Item */
+.eachItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(234, 190, 220);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: background 0.3s;
+}
+.eachItem:hover {
+  background: #f1f1f1;
+}
+.eachItem h3 {
+  font-size: 1.2rem;
+  color: #333;
+  word-break: break-all;
+}
+
+/* Buttons for Edit & Delete inside each Todo Item */
+.todo-btn {
+  display: flex;
+  gap: 15px;
+}
+.todo-btn i {
+  font-size: 1.4rem;
+  color: #9b59b6;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.todo-btn i:hover {
+  color: #8e44ad;
+}
+
+/* Remove All Button Style with Hover Effect */
+/* Initially the button shows the inner <span> text ("CHECK LIST") */
+.btn-effect04 {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  padding: 15px 30px;
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s;
+  text-align: center;
+}
+
+/* Transition for the inner span */
+.btn-effect04 span {
+  display: inline-block;
+  transition: opacity 0.3s;
+}
+
+/* Pseudo-element to show hover text (from data-sm-link-text attribute) */
+.btn-effect04::after {
+  content: attr(data-sm-link-text);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* On hover, fade out the original text (span) and fade in the pseudo-element text */
+.btn-effect04:hover span {
+  opacity: 0;
+}
+
+.btn-effect04:hover::after {
+  opacity: 1;
+}
+
+/* Optional hover effects for background and slight lift */
+.btn-effect04:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
